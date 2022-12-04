@@ -1,5 +1,6 @@
 import './style.css';
 import './img/PAKtZ.png';
+import getMealList from './modules/mealApi.js';
 
 // nav bar
 const menu = document.querySelector('.header-nav');
@@ -8,7 +9,7 @@ const hamburger = document.querySelector('.hamburger');
 const closeIcon = document.querySelector('.fa-circle-xmark');
 const menuIcon = document.querySelector('.menu-Icon');
 
-function toggleMenu() {
+const toggleMenu = () => {
   if (menu.classList.contains('showMenu')) {
     menu.classList.remove('showMenu');
     closeIcon.style.display = 'none';
@@ -18,7 +19,7 @@ function toggleMenu() {
     closeIcon.style.display = 'block';
     menuIcon.style.display = 'none';
   }
-}
+};
 
 hamburger.addEventListener('click', toggleMenu);
 
@@ -26,3 +27,5 @@ menuItems.forEach((menuItem) => {
   menuItem.addEventListener('click', toggleMenu);
 });
 // nav bar end
+
+getMealList();
